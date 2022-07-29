@@ -32,6 +32,15 @@ const searchFood = () => {
     .catch(error => displayError(error));
 }
 
+//searching on clicking 'enter'
+document.getElementById("search-field")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("button-search").click();
+    }
+});
+
 const displayError = error =>{
     document.getElementById('error-message').style.display = 'block';
     toggleSpinner('none');
